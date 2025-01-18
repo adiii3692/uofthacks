@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Blur Page",
+    "version": "1.0",
+    "description": "Blur the current webpage with one click.",
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_title": "Blur Page",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    }
+  }
+  
