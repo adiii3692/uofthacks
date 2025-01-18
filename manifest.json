@@ -1,15 +1,20 @@
 {
     "manifest_version": 3,
-    "name": "Blur Page",
+    "name": "MCImulator",
     "version": "1.0",
-    "description": "Blur the current webpage with one click.",
-    "permissions": ["scripting", "activeTab", "storage"],
+    "description": "Simulate Cognitive Impairment By Zooming In, Blurring, Audio/Video Disruption And Playing Video",
+    "permissions": ["scripting"],
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "background.js"
-    },
+    },"content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
     "action": {
-      "default_title": "Blur Page",
+      "default_title": "MCImulator Page",
       "default_icon": {
         "16": "icon.png",
         "48": "icon.png",
