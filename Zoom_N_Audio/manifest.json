@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Random Zoomer",
+    "name": "Zoomer and Audio",
     "version": "1.0",
-    "description": "Zooms in on the page at random intervals.",
+    "description": "Zooms in on the page and disrupts audio/video at random intervals.",
     "permissions": ["scripting"],
     "host_permissions": ["<all_urls>"],
     "background": {
@@ -15,7 +15,7 @@
       }
     ],
     "action": {
-      "default_title": "Zoom Page",
+      "default_title": "Zoom and Audio Disruptor",
       "default_icon": {
         "16": "icon.png",
         "48": "icon.png",
