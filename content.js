@@ -25,7 +25,7 @@ function disruptAudio() {
           media.muted = !media.muted;
           console.log(`🔇 Mute toggled: ${media.muted}`);
       } else if (randomEffect === 1) {
-          media.playbackRate = getRandomInterval(0.5, 2.0); // Change speed (0.5x - 2x)
+          media.playbackRate = getRandomInterval(0.25, 2.0); // Change speed (0.5x - 2x)
           console.log(`⏩ Speed set to: ${media.playbackRate.toFixed(2)}x`);
       } else {
           if (!media.paused) {
@@ -42,7 +42,7 @@ function disruptAudio() {
 }
 
 function stopDisruption() {
-  const restDuration = getRandomInterval(5000, 15000); // Rest for 5-15s
+  const restDuration = getRandomInterval(10000, 15000); // Rest for 10-15s
   const mediaElements = document.querySelectorAll("audio, video");
 
   mediaElements.forEach(media => {
