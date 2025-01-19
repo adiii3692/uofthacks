@@ -43,7 +43,7 @@ function disruptAudio() {
 
 function stopDisruption() {
   const restDuration = getRandomInterval(10000, 15000); // Rest for 10-15s
-  const mediaElements = document.querySelectorAll("audio, video");
+  const mediaElements = document. querySelectorAll("audio, video");
 
   mediaElements.forEach(media => {
       media.muted = false;
@@ -78,7 +78,7 @@ function startZooming() {
 }
 
 function stopZooming() {
-  const restDuration = getRandomInterval(5000, 10000); // Rest between 5s and 10s
+  const restDuration = getRandomInterval(15000, 20000); // Rest between 5s and 10s
 
   document.body.style.transition = 'transform 1s ease-in-out';
   document.body.style.transform = "scale(1)"; // Reset zoom
@@ -94,7 +94,7 @@ function randomBlurEffect() {
 
     const blurAmount = `${Math.floor(Math.random() * 12) + 6}px`; // Blur between 2px and 10px
     const blurDuration = getRandomInterval(7000,15000); // Duration between 2s and 5s
-    const clearDuration = getRandomInterval(6000,12000); // Duration between 2s and 5s
+    const clearDuration = getRandomInterval(15000,20000); // Duration between 2s and 5s
     body.style.transition='filter 5s ease-in-out';
     body.style.filter = `blur(${blurAmount})`;
     console.log(`Blur applied: ${blurAmount} for ${blurDuration}ms`);
