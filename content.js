@@ -3,7 +3,7 @@ function getRandomInterval(min, max) {
 }
 
 function getRandomZoomLevel() {
-  return Math.random() * (10 - 5) + 5; // Zoom between 5x and 10x
+  return Math.random() * (5 - 3) + 3; // Zoom between 3x and 5x
 }
 
 function disruptAudio() {
@@ -66,9 +66,10 @@ function observeDOMChanges() {
 }
 
 function startZooming() {
-  const zoomDuration = getRandomInterval(1000, 10000); // Zoom lasts between 1s and 10s
+  const zoomDuration = getRandomInterval(4000, 10000); // Zoom lasts between 1s and 10s
   const zoomLevel = getRandomZoomLevel();
 
+  document.body.style.transition = 'transform 1s ease-in-out';
   document.body.style.transform = `scale(${zoomLevel})`;
   document.body.style.transformOrigin = "center center";
   console.log(`🔍 Zooming to ${zoomLevel.toFixed(2)} for ${zoomDuration / 1000} seconds`);
@@ -79,6 +80,7 @@ function startZooming() {
 function stopZooming() {
   const restDuration = getRandomInterval(5000, 10000); // Rest between 5s and 10s
 
+  document.body.style.transition = 'transform 1s ease-in-out';
   document.body.style.transform = "scale(1)"; // Reset zoom
   console.log(`⏸ Stopping zoom for ${restDuration / 1000} seconds`);
 
@@ -90,14 +92,15 @@ function randomBlurEffect() {
 
   function applyRandomBlur() {
 
-    const blurAmount = `${Math.floor(Math.random() * 10) + 2}px`; // Blur between 2px and 10px
-    const blurDuration = getRandomInterval(2000,5000); // Duration between 2s and 5s
-    const clearDuration = getRandomInterval(5000,7000); // Duration between 2s and 5s
-
+    const blurAmount = `${Math.floor(Math.random() * 12) + 6}px`; // Blur between 2px and 10px
+    const blurDuration = getRandomInterval(7000,15000); // Duration between 2s and 5s
+    const clearDuration = getRandomInterval(6000,12000); // Duration between 2s and 5s
+    body.style.transition='filter 5s ease-in-out';
     body.style.filter = `blur(${blurAmount})`;
     console.log(`Blur applied: ${blurAmount} for ${blurDuration}ms`);
 
     setTimeout(() => {
+      body.style.transition='filter 5s ease-in-out';
       body.style.filter = "none";
       console.log(`Blur removed for ${clearDuration}ms`);
 
@@ -107,6 +110,9 @@ function randomBlurEffect() {
 
   applyRandomBlur();
 }
+
+// Make array of filenames to sounds 
+const sound_files=[]
 
 // Start the random blur effect
 randomBlurEffect();
